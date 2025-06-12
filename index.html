@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Car Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1616441800123-b1f6b933d3a2?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #007bff;
+    }
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #0056b3;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .cars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .car {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .car img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Electric Car Hub</h1>
+    <p>Khám phá thế giới xe ô tô điện hiện đại và thân thiện với môi trường</p>
+  </header>
+
+  <nav>
+    <a href="#advantages">Ưu điểm</a>
+    <a href="#models">Mẫu xe</a>
+    <a href="#contact">Liên hệ</a>
+  </nav>
+
+  <section id="advantages">
+    <h2>Ưu điểm của xe ô tô điện</h2>
+    <ul>
+      <li>Không phát thải khí CO₂</li>
+      <li>Chi phí nhiên liệu thấp hơn</li>
+      <li>Bảo trì đơn giản hơn xe xăng</li>
+      <li>Vận hành êm ái, ít tiếng ồn</li>
+    </ul>
+  </section>
+
+  <section id="models">
+    <h2>Các mẫu xe phổ biến</h2>
+    <div class="cars">
+      <div class="car">
+        <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/02ae2a67-0164-41f1-8262-39461b51b4b0/bvlatuR/std/2880x1800/_25-Hero-D" alt="Tesla Model 3">
+        <h3>Tesla Model 3</h3>
+        <p>Xe điện phổ thông với công nghệ tự lái tiên tiến.</p>
+      </div>
+      <div class="car">
+        <img src="https://media.vinfastauto.com/sites/default/files/2022-10/vf8-exterior%20%281%29.jpg" alt="VinFast VF8">
+        <h3>VinFast VF 8</h3>
+        <p>Mẫu SUV điện của Việt Nam với thiết kế hiện đại.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Liên hệ với chúng tôi</h2>
+    <form>
+      <input type="text" placeholder="Tên của bạn" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="5" placeholder="Nội dung liên hệ..."></textarea>
+      <button type="submit">Gửi</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Electric Car Hub. All rights reserved.
+  </footer>
+</body>
+</html>
