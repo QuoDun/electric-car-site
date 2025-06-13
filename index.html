@@ -112,13 +112,11 @@
   </div>
 
   <div class="feature">
-    <h2>🌿 Vì Mốt Việt Nam Xanh</h2>
+    <h2>🌿 Vì Một Việt Nam Xanh</h2>
     <p>Hãy cùng VinFast góp phần giữ gìn môi trường vì tương lai bền vững.</p>
   </div>
 
-  <button class="popup-btn" onclick="openPopup()">
-    Nhận báo giá & Lái thử xe
-  </button>
+  <button class="popup-btn" onclick="openPopup()">Nhận báo giá & Lái thử xe</button>
 
   <!-- Popup Form -->
   <div id="popupForm" class="popup-form">
@@ -128,36 +126,38 @@
       <h2 style="margin-bottom: 10px;">BÁO GIÁ & LÁI THỬ XE</h2>
       <p>Vui lòng nhập thông tin để được tư vấn</p>
 
-      <input type="text" placeholder="Nguyễn Quốc Dũng" required />
-      <input type="tel" placeholder="0946200041" required />
+      <form id="testDriveForm">
+        <input type="text" name="name" placeholder="Nguyễn Quốc Dũng" required />
+        <input type="tel" name="phone" placeholder="0946200041" required />
 
-      <select required>
-        <option value="" disabled selected>Xe muốn mua</option>
-        <option>VF 3</option>
-        <option>VF 5 Plus</option>
-        <option>VF 6 Eco</option>
-        <option>VF 6 Plus</option>
-        <option>VF 7 Eco</option>
-        <option>VF 7 Plus - trần thép</option>
-        <option>VF 7 Plus - trần kính</option>
-        <option>VF 8 pin CATL Eco</option>
-        <option>VF 8 pin CATL Plus</option>
-        <option>VF 9 pin CATL, điều hoà 3 vùng Eco</option>
-        <option>VF 9 pin CATL, điều hoà 3 vùng Plus - trần thép</option>
-        <option>Minio Green</option>
-        <option>EC Van Tiêu chuẩn</option>
-        <option>EC Van Nâng cao</option>
-        <option>Herio Green</option>
-        <option>Nerio Green</option>
-        <option>Limo Green</option>
-      </select>
+        <select name="car" required>
+          <option value="" disabled selected>Xe muốn mua</option>
+          <option>VF 3</option>
+          <option>VF 5 Plus</option>
+          <option>VF 6 Eco</option>
+          <option>VF 6 Plus</option>
+          <option>VF 7 Eco</option>
+          <option>VF 7 Plus - trần thép</option>
+          <option>VF 7 Plus - trần kính</option>
+          <option>VF 8 pin CATL Eco</option>
+          <option>VF 8 pin CATL Plus</option>
+          <option>VF 9 pin CATL, điều hoà 3 vùng Eco</option>
+          <option>VF 9 pin CATL, điều hoà 3 vùng Plus - trần thép</option>
+          <option>Minio Green</option>
+          <option>EC Van Tiêu chuẩn</option>
+          <option>EC Van Nâng cao</option>
+          <option>Herio Green</option>
+          <option>Nerio Green</option>
+          <option>Limo Green</option>
+        </select>
 
-      <div style="display: flex; justify-content: center; gap: 30px; margin: 10px 0;">
-        <label><input type="radio" name="payment" value="Trả góp"> Trả góp</label>
-        <label><input type="radio" name="payment" value="Trả thẳng" checked> Trả thẳng</label>
-      </div>
+        <div style="display: flex; justify-content: center; gap: 30px; margin: 10px 0;">
+          <label><input type="radio" name="payment" value="Trả góp" required> Trả góp</label>
+          <label><input type="radio" name="payment" value="Trả thẳng" checked> Trả thẳng</label>
+        </div>
 
-      <button>Nhận báo giá & Lái thử xe</button>
+        <button type="submit">Nhận báo giá & Lái thử xe</button>
+      </form>
     </div>
   </div>
 
@@ -165,9 +165,27 @@
     function openPopup() {
       document.getElementById("popupForm").style.display = "flex";
     }
+
     function closePopup() {
       document.getElementById("popupForm").style.display = "none";
     }
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw-ZW2bIpj6n-k5v8J1bbzJU7YMrH0fk87JjEdiiPiStBlbjy4dU3-wXzSsEIfdeEaL/exec';
+    const form = document.getElementById('testDriveForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          alert("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
+          form.reset();
+          closePopup();
+        })
+        .catch(error => {
+          alert("Có lỗi xảy ra. Vui lòng thử lại sau.");
+          console.error('Error!', error.message);
+        });
+    });
   </script>
 </body>
 </html>
