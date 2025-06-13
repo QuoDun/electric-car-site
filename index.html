@@ -169,4 +169,45 @@
     <section id="tuvan">
       <h2>Tư vấn chọn xe</h2>
       <p>Khi chọn xe điện, hãy xem xét phạm vi di chuyển, thời gian sạc, giá cả và các dịch vụ hỗ trợ của hãng.</p>
-      <button class="popup-btn" onclick="openP
+      <button class="popup-btn" onclick="openPopup()">Nhận báo giá & Lái thử</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Xe Ô Tô Điện - Mọi quyền được bảo lưu
+  </footer>
+
+  <!-- Popup -->
+  <div id="popupForm" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">×</span>
+      <h2>BÁO GIÁ & LÁI THỬ XE</h2>
+      <p>Vui lòng nhập thông tin để được tư vấn</p>
+      <div style="margin-bottom: 10px;">
+        <label><input type="radio" name="payment" checked> Trả góp</label>
+        <label style="margin-left: 20px;"><input type="radio" name="payment"> Trả thẳng</label>
+      </div>
+      <input type="text" placeholder="Họ và tên">
+      <input type="text" placeholder="Số điện thoại">
+      <select>
+        <option disabled selected>Xe muốn mua</option>
+        <option>VinFast VF 5</option>
+        <option>VinFast VF 8</option>
+        <option>VinFast Lux A2.0</option>
+      </select>
+      <button class="submit-btn">GỬI YÊU CẦU NGAY</button>
+    </div>
+  </div>
+
+  <!-- Script mở/tắt popup -->
+  <script>
+    function openPopup() {
+      document.getElementById("popupForm").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popupForm").style.display = "none";
+    }
+  </script>
+</body>
+</html>
