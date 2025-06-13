@@ -3,187 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Xe Ô Tô Điện</title>
+  <title>VinFast - Tương Lai Di Chuyển</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-
     body {
-      background-color: #f0f4f8;
-      color: #333;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
     }
 
     header {
-      background-color: #1e88e5;
-      color: white;
-      padding: 20px 0;
+      background-color: #00bcd4;
+      padding: 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      margin: 0;
+      font-size: 2.2rem;
     }
 
-    nav {
-      background-color: #1565c0;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .feature {
+      background: white;
+      color: #333;
+      margin: 20px auto;
+      padding: 20px;
       border-radius: 10px;
-      margin-top: 20px;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    section {
-      margin-bottom: 30px;
-    }
-
-    section h2 {
-      color: #1e88e5;
+    .feature h2 {
       margin-bottom: 10px;
+      color: #00bcd4;
     }
 
     footer {
-      background-color: #1e88e5;
-      color: white;
+      background-color: #005f73;
       text-align: center;
-      padding: 15px 0;
+      padding: 20px;
+      color: white;
       margin-top: 40px;
     }
 
-    /* Nút mở popup */
-    .popup-btn {
-      background-color: #1e88e5;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    /* Popup */
+    /* Popup styles */
     .popup-overlay {
       display: none;
       position: fixed;
-      z-index: 999;
-      left: 0; top: 0; right: 0; bottom: 0;
-      background-color: rgba(0,0,0,0.5);
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
     }
 
     .popup-content {
-      background: #fff;
-      width: 90%;
-      max-width: 400px;
-      margin: 60px auto;
+      max-width: 500px;
+      margin: 100px auto;
+      background: white;
       padding: 20px;
       border-radius: 10px;
       position: relative;
-      text-align: center;
+      color: black;
     }
 
-    .popup-content input, .popup-content select {
+    .popup-content input,
+    .popup-content select {
       width: 100%;
       padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    .popup-content h2 {
-      color: #1e88e5;
       margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
-    .popup-content p {
-      font-size: 14px;
-      color: #666;
-    }
-
-    .submit-btn {
-      background-color: #1e88e5;
+    .popup-content button.submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: #1e88e5;
       color: white;
-      padding: 12px 20px;
       border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
+      border-radius: 5px;
     }
 
-    .close-btn {
+    .popup-content .close-btn {
       position: absolute;
-      right: 15px;
       top: 10px;
-      font-size: 24px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .popup-btn {
+      display: block;
+      margin: 40px auto;
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Giới Thiệu Xe Ô Tô Điện</h1>
+    <h1>🚗 VinFast - Tương Lai Di Chuyển 🚀</h1>
   </header>
 
-  <nav>
-    <a href="#gioithieu">Giới thiệu</a>
-    <a href="#loiich">Lợi ích</a>
-    <a href="#tuvan">Tư vấn</a>
-  </nav>
+  <div class="feature">
+    <h2>🌿 Xe Điện Thông Minh</h2>
+    <p>VinFast mang đến giải pháp giao thông xanh, thông minh và hiện đại với công nghệ AI và pin lithium bền bỉ.</p>
+  </div>
 
-  <main>
-    <section id="gioithieu">
-      <h2>Xe ô tô điện là gì?</h2>
-      <p>Xe ô tô điện sử dụng động cơ điện thay vì động cơ xăng/dầu, giúp giảm khí thải và bảo vệ môi trường.</p>
-    </section>
+  <div class="feature">
+    <h2>⚡ Hiệu Suất Mạnh Mẽ</h2>
+    <p>Động cơ điện mạnh mẽ, tốc độ vượt trội và trải nghiệm lái mượt mà trên mọi hành trình.</p>
+  </div>
 
-    <section id="loiich">
-      <h2>Lợi ích khi sử dụng ô tô điện</h2>
-      <ul>
-        <li>Tiết kiệm nhiên liệu</li>
-        <li>Thân thiện với môi trường</li>
-        <li>Ít bảo trì hơn</li>
-        <li>Vận hành êm ái</li>
-      </ul>
-    </section>
+  <div class="feature">
+    <h2>🌍 Vì Một Việt Nam Xanh</h2>
+    <p>Hãy cùng VinFast góp phần giảm ô nhiễm và xây dựng tương lai bền vững cho thế hệ sau.</p>
+  </div>
 
-    <section id="tuvan">
-      <h2>Tư vấn chọn xe</h2>
-      <p>Khi chọn xe điện, hãy xem xét phạm vi di chuyển, thời gian sạc, giá cả và các dịch vụ hỗ trợ của hãng.</p>
-      <button class="popup-btn" onclick="openPopup()">Nhận báo giá & Lái thử</button>
-    </section>
-  </main>
+  <button class="popup-btn" onclick="openPopup()">Nhận báo giá & Lái thử xe</button>
 
-  <footer>
-    &copy; 2025 Xe Ô Tô Điện - Mọi quyền được bảo lưu
-  </footer>
-
-  <!-- Popup -->
+  <!-- Popup Form -->
   <div id="popupForm" class="popup-overlay">
     <div class="popup-content">
       <span class="close-btn" onclick="closePopup()">×</span>
-      <h2>BÁO GIÁ & LÁI THỬ XE</h2>
-      <p>Vui lòng nhập thông tin để được tư vấn</p>
-      <div style="margin-bottom: 10px;">
+      <p style="font-weight: bold; color: red; text-align:center;">HOTLINE: 08383.11.202</p>
+      <h2 style="text-align:center;">BÁO GIÁ & LÁI THỬ XE</h2>
+      <p style="text-align:center;">Vui lòng nhập thông tin để được tư vấn</p>
+
+      <div style="margin: 10px 0; text-align: center;">
         <label><input type="radio" name="payment" checked> Trả góp</label>
         <label style="margin-left: 20px;"><input type="radio" name="payment"> Trả thẳng</label>
       </div>
@@ -191,15 +144,18 @@
       <input type="text" placeholder="Số điện thoại">
       <select>
         <option disabled selected>Xe muốn mua</option>
-        <option>VinFast VF 5</option>
+        <option>VinFast VF e34</option>
+        <option>VinFast Lux SA2.0</option>
         <option>VinFast VF 8</option>
-        <option>VinFast Lux A2.0</option>
       </select>
       <button class="submit-btn">GỬI YÊU CẦU NGAY</button>
     </div>
   </div>
 
-  <!-- Script mở/tắt popup -->
+  <footer>
+    &copy; 2025 VinFast | Designed by Quốc Dũng ☀️
+  </footer>
+
   <script>
     function openPopup() {
       document.getElementById("popupForm").style.display = "block";
