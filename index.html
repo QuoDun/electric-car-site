@@ -2,9 +2,9 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VinFast - Tương Lai Di Chuyển</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -31,66 +31,6 @@
       padding: 20px;
       border-radius: 10px;
       max-width: 800px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .feature h2 {
-      margin-bottom: 10px;
-      color: #00bcd4;
-    }
-
-    footer {
-      background-color: #005f73;
-      text-align: center;
-      padding: 20px;
-      color: white;
-      margin-top: 40px;
-    }
-
-    /* Popup styles */
-    .popup-overlay {
-      display: none;
-      position: fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      background: rgba(0,0,0,0.7);
-      z-index: 1000;
-    }
-
-    .popup-content {
-      max-width: 500px;
-      margin: 100px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      position: relative;
-      color: black;
-    }
-
-    .popup-content input,
-    .popup-content select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    .popup-content button.submit-btn {
-      width: 100%;
-      padding: 12px;
-      background: #1e88e5;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .popup-content .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      cursor: pointer;
-      font-size: 20px;
     }
 
     .popup-btn {
@@ -104,63 +44,127 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
+    .popup-form {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+      text-align: center;
+    }
+
+    .popup-content input,
+    .popup-content select {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .popup-content button {
+      padding: 10px 20px;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      color: #000;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>🚗 VinFast - Tương Lai Di Chuyển 🚀</h1>
+    <h1>🌟 VinFast - Tương Lai Di Chuyển 🚗</h1>
   </header>
 
   <div class="feature">
-    <h2>🌿 Xe Điện Thông Minh</h2>
-    <p>VinFast mang đến giải pháp giao thông xanh, thông minh và hiện đại với công nghệ AI và pin lithium bền bỉ.</p>
+    <h2>⚡ Xe Điện Thông Minh</h2>
+    <p>VinFast mang đến giải pháp giao thông xanh, sạch và hiệu quả.</p>
   </div>
 
   <div class="feature">
-    <h2>⚡ Hiệu Suất Mạnh Mẽ</h2>
-    <p>Động cơ điện mạnh mẽ, tốc độ vượt trội và trải nghiệm lái mượt mà trên mọi hành trình.</p>
+    <h2>🚀 Hiệu Suất Mạnh Mẽ</h2>
+    <p>Động cơ điện mạnh mẽ, tốc độ vượt trội và vận hành êm ái.</p>
   </div>
 
   <div class="feature">
-    <h2>🌍 Vì Một Việt Nam Xanh</h2>
-    <p>Hãy cùng VinFast góp phần giảm ô nhiễm và xây dựng tương lai bền vững cho thế hệ sau.</p>
+    <h2>🌿 Vì Mốt Việt Nam Xanh</h2>
+    <p>Hãy cùng VinFast góp phần giữ gìn môi trường vì tương lai bền vững.</p>
   </div>
 
-  <button class="popup-btn" onclick="openPopup()">Nhận báo giá & Lái thử xe</button>
+  <button class="popup-btn" onclick="openPopup()">
+    Nhận báo giá & Lái thử xe
+  </button>
 
   <!-- Popup Form -->
-  <div id="popupForm" class="popup-overlay">
+  <div id="popupForm" class="popup-form">
     <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">×</span>
+      <span class="close-btn" onclick="closePopup()">&times;</span>
       <p style="font-weight: bold; color: red; text-align:center;">HOTLINE: 08383.11.202</p>
-      <h2 style="text-align:center;">BÁO GIÁ & LÁI THỬ XE</h2>
-      <p style="text-align:center;">Vui lòng nhập thông tin để được tư vấn</p>
+      <h2 style="margin-bottom: 10px;">BÁO GIÁ & LÁI THỬa XE</h2>
+      <p>Vui lòng nhập thông tin để được tư vấn</p>
 
-      <div style="margin: 10px 0; text-align: center;">
-        <label><input type="radio" name="payment" checked> Trả góp</label>
-        <label style="margin-left: 20px;"><input type="radio" name="payment"> Trả thẳng</label>
-      </div>
-      <input type="text" placeholder="Họ và tên">
-      <input type="text" placeholder="Số điện thoại">
-      <select>
-        <option disabled selected>Xe muốn mua</option>
-        <option>VinFast VF e34</option>
-        <option>VinFast Lux SA2.0</option>
-        <option>VinFast VF 8</option>
+      <input type="text" placeholder="Nguyễn Quốc Dũng" required />
+      <input type="tel" placeholder="0946200041" required />
+
+      <select required>
+        <option value="" disabled selected>Xe muốn mua</option>
+        <option>VF 3</option>
+        <option>VF 5 Plus</option>
+        <option>VF 6 Eco</option>
+        <option>VF 6 Plus</option>
+        <option>VF 7 Eco</option>
+        <option>VF 7 Plus - trần thép</option>
+        <option>VF 7 Plus - trần kính</option>
+        <option>VF 8 pin CATL Eco</option>
+        <option>VF 8 pin CATL Plus</option>
+        <option>VF 9 pin CATL, điều hoà 3 vùng Eco</option>
+        <option>VF 9 pin CATL, điều hoà 3 vùng Plus - trần thép</option>
+        <option>Minio Green</option>
+        <option>EC Van Tiêu chuẩn</option>
+        <option>EC Van Nâng cao</option>
+        <option>Herio Green</option>
+        <option>Nerio Green</option>
+        <option>Limo Green</option>
       </select>
-      <button class="submit-btn">GỬI YÊU CẦU NGAY</button>
+
+      <div style="display: flex; justify-content: center; gap: 30px; margin: 10px 0;">
+        <label><input type="radio" name="payment" value="Trả góp"> Trả góp</label>
+        <label><input type="radio" name="payment" value="Trả thẳng" checked> Trả thẳng</label>
+      </div>
+
+      <button>Nhận báo giá & Lái thử xe</button>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 VinFast | Designed by Quốc Dũng ☀️
-  </footer>
-
   <script>
     function openPopup() {
-      document.getElementById("popupForm").style.display = "block";
+      document.getElementById("popupForm").style.display = "flex";
     }
-
     function closePopup() {
       document.getElementById("popupForm").style.display = "none";
     }
